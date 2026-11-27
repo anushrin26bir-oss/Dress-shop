@@ -1,0 +1,73 @@
+
+const dresses = [
+  { id: 1, name: "Silk Evening Gown", category: "Evening", price: 4500, icon: "👗" },
+  { id: 2, name: "Floral Midi Sundress", category: "Casual", price: 1850, icon: "🌸" },
+  { id: 3, name: "Velvet Cocktail Dress", category: "Party", price: 3200, icon: "✨" },
+  { id: 4, name: "Linen Wrap Dress", category: "Summer", price: 2100, icon: "🌿" },
+  { id: 5, name: "Embroidered Anarkali", category: "Festive", price: 5400, icon: "🪡" },
+  { id: 6, name: "Satin Slip Dress", category: "Evening", price: 2750, icon: "🥂" }
+];
+
+let cartCount = 0;
+
+const dressGrid = document.getElementById("dressGrid");
+const searchInput = document.getElementById("searchInput");
+const sortSelect = document.getElementById("sortSelect");
+const cartCountEl = document.getElementById("cartCount");
+
+function renderDresses(items) {
+  dressGrid.innerHTML = "";
+
+  items.forEach(dress => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <div class="dress-banner">${dress.icon}</div>
+      <div class="card-body">
+        <div>
+          <div class="dress-category">${dress.category}</div>
+          <div class="dress-name">${dress.name}</div>
+          <div class="dress-price">
+            ₹${dress.price.toLocaleString("en-IN")}
+          </div>
+        </div>
+        <button onclick="addToBag('${dress.name}')">
+          Add to Bag
+        </button>
+      </div>
+    `;
+
+    dressGrid.appendChild(card);
+  });
+}
+
+function addToBag(dressName) {
+  cartCount++;
+  cartCountEl.textContent = cartCount;
+
+  alert(`Added "${dressName}" to your shopping bag!`);
+}
+
+function updateDisplay() {
+  const query = searchInput.value.toLowerCase();
+  const sortOrder = sortSelect.value;
+
+  let filtered = dresses.filter(dress =>
+    dress.name.toLowerCase().includes(query)
+  );
+
+  if (sortOrder === "low") {
+    filtered.sort((a, b) => a.price - b.price);
+  } else if (sortOrder === "high") {
+    filtered.sort((a, b) => b.price - a.price);
+  }
+
+  renderDresses(filtered);
+}
+
+searchInput.addEventListener("input", updateDisplay);
+sortSelect.addEventListener("change", updateDisplay);
+
+// Initial display
+renderDresses(dresses);
