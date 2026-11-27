@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Élan Boutique | Dress Collection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>ÉLAN BOUTIQUE</h1>
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search dress name...">
+      <select id="sortSelect">
+        <option value="default">Sort by Price</option>
+        <option value="low">Low to High</option>
+        <option value="high">High to Low</option>
+      </select>
+      <div class="cart-badge">Bag: <span id="cartCount">0</span></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid" id="dressGrid"></div>
+  </main>
+
+  <script src="script.js" defer></script>
+
+</body>
+</html>
