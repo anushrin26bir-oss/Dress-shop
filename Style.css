@@ -1,0 +1,130 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #faf7f5;
+      color: #2c2420;
+    }
+
+    header {
+      background-color: #2c2420;
+      color: #fff;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    header h1 {
+      font-weight: 400;
+      letter-spacing: 2px;
+      font-size: 1.8rem;
+    }
+
+    .controls {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    input[type="text"], select {
+      padding: 0.6rem 1rem;
+      border: 1px solid #d4c8c1;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      background: #fff;
+    }
+
+    .cart-badge {
+      background-color: #c88a73;
+      color: #fff;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ece3dd;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(44, 36, 32, 0.08);
+    }
+
+    .dress-banner {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      background: linear-gradient(135deg, #f3e6e0, #e6d2c7);
+    }
+
+    .card-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .dress-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #8c7a70;
+      margin-bottom: 0.3rem;
+    }
+
+    .dress-name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .dress-price {
+      font-size: 1.1rem;
+      color: #a65e46;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      background-color: #2c2420;
+      color: #fff;
+      border: none;
+      padding: 0.65rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #a65e46;
+    }
